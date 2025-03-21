@@ -4,161 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRAW!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #282C34;
-            padding: 20px;
-            color: #D3D3D3;
-        }
-        h1 {
-            color: #C0C0C0;
-            margin-bottom: 10px;
-        }
-        #today-task {
-            background: #3A3D40;
-            padding: 12px;
-            margin: 10px auto;
-            width: 100%;
-            max-width: 900px;
-            font-size: 1em;
-            font-weight: bold;
-            border-radius: 6px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-            color: #D3D3D3;
-            text-align: center;
-        }
-        .calendar-container {
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-        }
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 6px;
-            width: 100%;
-        }
-        .day-header {
-            font-weight: bold;
-            background-color: #40444B;
-            color: #B0B0B0;
-            padding: 6px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .day {
-            background: #3A3D40;
-            border: 1px solid #50555C;
-            padding: 6px;
-            text-align: left;
-            font-size: 0.85em;
-            border-radius: 4px;
-            color: #D3D3D3;
-            min-height: 60px;
-            display: flex;
-            flex-direction: column;
-        }
-        .today {
-            background-color: #4C566A !important;
-            font-weight: bold;
-            color: #E0E0E0 !important;
-            border: 2px solid #7094DB;
-        }
-        .study {
-            color: #A0B3C3;
-            font-weight: bold;
-        }
-        .illustration {
-            color: #C4A484;
-            font-weight: bold;
-        }
-        @media (max-width: 600px) {
-            .calendar {
-                display: table;
-                width: 100%;
-            }
-            .day-header {
-                display: none;
-            }
-            .day {
-                display: table-row;
-                width: 100%;
-                border-radius: 6px;
-                overflow: hidden;
-            }
-            .day strong {
-                display: table-cell;
-                width: 30%;
-                text-align: left;
-                padding: 6px;
-                border-radius: 6px 0 0 6px;
-            }
-            .day .tasks {
-                display: table-cell;
-                width: 70%;
-                text-align: left;
-                padding: 6px;
-                border-radius: 0 6px 6px 0;
-            }
-            #today-task {
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
-            }
-        }
-    </style>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			background-color: #282C34;
+			padding: 20px;
+			color: #D3D3D3;
+		}
+		h1 {
+			color: #C0C0C0;
+			margin-bottom: 10px;
+			font-weight: normal;
+			text-align: left;
+		}
+		#today-task {
+			padding: 12px;
+			margin: 10px auto;
+			width: 100%;
+			max-width: 900px;
+			font-size: 1em;
+			font-weight: normal
+			border-radius: 6px;
+			color: #D3D3D3;
+			text-align: left;
+			gap: 8px;
+		}
+		p {
+			margin: 4px 0;
+			padding: 0;
+			color: #C0C0C0;
+			text-align: left;
+		}
+		.calendar-container {
+			width: 100%;
+			max-width: 900px;
+			margin: auto;
+		}
+		.calendar {
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			gap: 6px;
+			width: 100%;
+		}
+		.day-header {
+			font-weight: normal;
+			background-color: #40444B;
+			color: #B0B0B0;
+			padding: 6px;
+			border-radius: 4px;
+			font-size: 0.85em;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.day {
+			background: #3A3D40;
+			border: 1px solid #50555C;
+			padding: 6px;
+			text-align: left;
+			font-size: 0.85em;
+			border-radius: 4px;
+			color: #D3D3D3;
+			min-height: 60px;
+			display: flex;
+			flex-direction: column;
+		}
+		.today {
+			background-color: #4C566A !important;
+			font-weight: normal;
+			color: #E0E0E0 !important;
+			border: 2px solid #7094DB;
+		}
+		.study {
+			color: #A0B3C3;
+			font-weight: normal;
+		}
+		.illustration {
+			color: #C4A484;
+			font-weight: normal;
+		}
+		@media (max-width: 600px) {
+			.calendar {
+				display: table;
+				width: 100%;
+			}
+			.day-header {
+				display: none;
+			}
+			.day {
+				display: table-row;
+				width: 100%;
+				border-radius: 6px;
+				overflow: hidden;
+			}
+			.day strong {
+				display: table-cell;
+				width: 30%;
+				text-align: left;
+				padding: 6px;
+				border-radius: 6px 0 0 6px;
+				font-weight: normal;
+			}
+			.day .tasks {
+				display: table-cell;
+				width: 70%;
+				text-align: left;
+				padding: 6px;
+				border-radius: 0 6px 6px 0;
+			}
+			#today-task {
+				width: 100%;
+				max-width: 100%;
+				box-sizing: border-box;
+			}
+		}
+	</style>
 </head>
 <body>
-    <h1>DRAW!</h1>
     <div id="today-task">Today's task: Loading...</div>
     <div class="calendar-container">
         <div class="calendar" id="schedule"></div>
     </div>
 
     <script>
-        const schedule = [
-		["Figure Drawing", "Sketch #1"],
-		["Anatomy & Hands/Feet", "Rough #1"],
-		["Object Study", "Render #1"],
-		["Lighting", "Sketch #2"],
-		["Facial Structure", "Rough #2"],
-		["Free Study", "Render #2"],
-		["Rest Day", "Catch up"],
-		
-		["Poses/Perspective", "Sketch #3"],
-		["Face & Drapery", "Rough #3"],
-		["Animal/Nature Study", "Render #3"],
-		["Architecture Study", "Sketch #4"],
-		["Master Study", "Rough #4"],
-		["Free Study", "Render #4"],
-		["Rest Day", "Catch up"],
-		
-		["Figure Drawing", "Sketch #5"],
-		["Anatomy & Hands/Feet", "Rough #5"],
-		["Object Study", "Render #5"],
-		["Lighting", "Sketch #6"],
-		["Facial Structure", "Rough #6"],
-		["Free Study", "Render #6"],
-		["Rest Day", "Catch up"],
-		
-		["Color Theory & Thumbs", "Sketch #7"],
-		["Special Effects", "Rough #7"],
-		["Fictional Props", "Render #7"],
-		["Character Design", "Sketch #8"],
-		["Composition", "Rough #8"],
-		["Free Study", "Render #8"],
-		["Rest Day", "Catch up"],
-		
-		["Review studies", "Touch up"],
-		["Portfolio prep", "Finalize artworks"],
-		["Rest Day", "Catch up"]
-        ];
+	const schedule = [
+		// Week 1
+		["Figure Drawing", "Sketch #1", "Focus on drawing human figures in various poses to understand proportions and anatomy.", "Quick, gestural sketches that emphasize fluidity, posture, and dynamic movement."],
+		["Anatomy & Hands/Feet", "Rough #1", "Study the anatomy of hands and feet, focusing on bone structure and muscles.", "Rough sketches of hands and feet from multiple angles, focusing on their anatomical structure."],
+		["Object Study", "Render #1", "Choose an object and render it with attention to lighting, texture, and details.", "A highly detailed rendering of the object with accurate shading and texture."],
+		["Lighting", "Sketch #2", "Study the effects of lighting on objects and figures, emphasizing light and shadow play.", "Quick sketches showcasing various lighting scenarios, demonstrating light and shadow contrasts."],
+		["Facial Structure", "Rough #2", "Study the human face, focusing on its anatomy, proportions, and features.", "Rough sketches of faces from different angles, focusing on the structure and proportions."],
+		["Free Study", "Render #2", "This day is for free study; choose a subject or technique you want to improve.", "A finished piece demonstrating your chosen technique or subject matter."],
+		["Rest Day", "Catch up", "A break day to allow rest or catch up on any missed tasks.", "Relax, review, or refine previous works as needed."],
+
+		// Week 2
+		["Poses/Perspective", "Sketch #3", "Practice dynamic poses and perspective to develop a sense of depth and movement.", "Sketches with dynamic poses and perspective, focusing on capturing depth and action."],
+		["Face & Drapery", "Rough #3", "Study the relationship between the human face and drapery or clothing, focusing on folds and flow.", "Rough sketches of faces with drapery, focusing on how fabric interacts with the figure."],
+		["Animal/Nature Study", "Render #3", "Study and render animals or nature scenes, paying attention to anatomy and textures.", "A detailed rendering of animals or nature scenes, with an emphasis on texture and anatomy."],
+		["Architecture Study", "Sketch #4", "Study architectural forms and structures, focusing on perspective and proportion.", "Sketches of buildings or architectural elements, highlighting perspective and scale."],
+		["Master Study", "Rough #4", "Recreate a piece by a master artist to learn their techniques and style.", "Rough recreation of a classic piece, focusing on capturing the original’s style and technique."],
+		["Free Study", "Render #4", "Another day of free study; work on refining a previous task or exploring a new subject.", "A completed study focusing on a personal area of improvement or interest."],
+		["Rest Day", "Catch up", "Another rest day to allow recovery or catch up on any missed tasks.", "Relax, reflect, and touch up any unfinished work."],
+
+		// Week 3
+		["Figure Drawing", "Sketch #5", "Continue practicing figure drawing, focusing on more complex poses and gestures.", "A series of dynamic figure sketches, emphasizing proportion and action."],
+		["Anatomy & Hands/Feet", "Rough #5", "Further study of hands and feet anatomy, with an emphasis on dynamic poses.", "Rough sketches of hands and feet in action, focusing on anatomical accuracy."],
+		["Object Study", "Render #5", "Pick an object and render it with greater detail and complexity, focusing on texture and light.", "A highly detailed rendering of an object, paying close attention to lighting, texture, and form."],
+		["Lighting", "Sketch #6", "Experiment with various lighting scenarios to improve your understanding of shadows and highlights.", "Sketches that explore different lighting setups, showing contrast, shadows, and highlights."],
+		["Facial Structure", "Rough #6", "Refine your studies of the face, focusing on the intricacies of facial expressions and features.", "Rough sketches of facial features, exploring different expressions and angles."],
+		["Free Study", "Render #6", "Work on a personal project or any technique you'd like to improve.", "A finished personal project or refined study showcasing improvement in your chosen focus."],
+		["Rest Day", "Catch up", "Use this day for rest or to catch up on any tasks that have been missed.", "Relax and review your previous works for refinement."],
+
+		// Week 4
+		["Color Theory & Thumbs", "Sketch #7", "Study color theory and create thumbnail sketches to experiment with color palettes.", "Small color sketches exploring different color schemes and compositions."],
+		["Special Effects", "Rough #7", "Study and experiment with rendering special effects such as smoke, fire, or light sources.", "Rough sketches of scenes with special effects, focusing on how to convey light and texture."],
+		["Fictional Props", "Render #7", "Design and render fictional props or objects, paying attention to their details and realism.", "A detailed rendering of a fictional object or prop, incorporating realistic texture and material."],
+		["Character Design", "Sketch #8", "Create character designs, focusing on silhouettes, anatomy, and unique details for personality.", "Character sketches that explore silhouettes, outfits, and expressions that define their personality."],
+		["Composition", "Rough #8", "Study composition techniques such as the rule of thirds, leading lines, and focal points in your sketches.", "Rough sketches focusing on different compositional techniques, showing how elements interact in the frame."],
+		["Free Study", "Render #8", "Focus on a subject or technique you're passionate about for further improvement.", "A polished piece that demonstrates your skills in a subject of personal interest."],
+		["Rest Day", "Catch up", "Take a day to relax or catch up on any unfinished tasks.", "Relax and review or finish any ongoing works that need attention."],
+
+		// Final Days
+		["Review studies", "Touch up", "Review and refine previous works, applying any new techniques learned.", "Final touches and adjustments to past works to polish and improve them."],
+		["Portfolio prep", "Finalize artworks", "Prepare your best pieces for your portfolio, ensuring they meet professional standards.", "A refined portfolio ready to showcase your best work, including final versions of key pieces."],
+		["Rest Day", "Catch up", "A final rest day to relax or finish any work left unfinished.", "Take a break and finalize any loose ends before concluding the study period."]
+	];
 
         const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         const today = new Date();
@@ -167,7 +179,16 @@
         const calendar = document.getElementById("schedule");
         const todayTaskDiv = document.getElementById("today-task");
         
-        todayTaskDiv.innerHTML = `<strong>Today's Task:</strong> <div class='study'>${schedule[todayIndex][0]}</div><div class='illustration'>${schedule[todayIndex][1]}</div>`;
+        todayTaskDiv.innerHTML =
+		`
+		<h1>DRAW!</h1>
+		<div class='study'><strong>${schedule[todayIndex][0]}</strong></div>
+		<div class='illustration'><strong>${schedule[todayIndex][1]}</strong></div>
+		<div>
+			<p><small>${schedule[todayIndex][2]}</small></p>
+			<p><small>${schedule[todayIndex][3]}</small></p>
+		</div>
+		`;
         
         weekdays.forEach(day => {
             const header = document.createElement("div");
